@@ -1,9 +1,11 @@
-/* Paleta de Colores Femenina y Divertida con Fondo de Color */
+/* Paleta de Colores Femenina, Vibrante y Moderna */
 :root {
-    --color-principal: #FF69B4; /* Rosa Brillante (Fucsia) */
-    --color-secundario: #4682B4; /* Azul Acero (Contraste) */
-    --color-fondo: #FBEFF2; /* Rosa Pálido/Beige (¡FONDO!) */
-    --color-texto: #1A1A1A;
+    --color-primario-vibrante: #FF1493; /* Rosa Fuerte/Fucsia (Deep Pink) */
+    --color-secundario-suave: #6A5ACD; /* Azul Púrpura (Slate Blue) */
+    --color-acento-claro: #FFDAB9; /* Durazno suave (Peach Puff) */
+    --color-fondo-claro: #FFF0F5; /* Blanco Rosado (Lavenderblush) - Más luminoso */
+    --color-texto-oscuro: #2C3E50; /* Azul Oscuro (elegante) */
+    --color-sombra-suave: rgba(0, 0, 0, 0.15);
     --fuente-titulo: 'Playfair Display', serif;
     --fuente-cuerpo: 'Montserrat', sans-serif; 
 }
@@ -17,41 +19,72 @@
 
 body {
     font-family: var(--fuente-cuerpo);
-    background-color: var(--color-fondo); 
-    color: var(--color-texto);
+    background-color: var(--color-fondo-claro); 
+    color: var(--color-texto-oscuro);
     line-height: 1.6;
     text-align: center;
     padding-top: 50px;
     min-height: 100vh; 
+    transition: background-color 0.5s ease;
 }
 
 /* Estilos del encabezado/hero */
 .hero {
-    padding: 60px 20px;
-    background-color: white; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 0 auto 40px auto;
+    padding: 60px 20px 40px; 
+    background: linear-gradient(135deg, white, var(--color-acento-claro)); /* Degradado sutil */
+    box-shadow: 0 8px 20px var(--color-sombra-suave); /* Sombra más pronunciada */
+    margin: 0 auto 50px auto; 
     max-width: 800px;
-    border-radius: 10px;
+    border-radius: 15px; 
+    position: relative; 
+    overflow: hidden; 
 }
 
 .titulo-principal {
     font-family: var(--fuente-titulo);
-    font-size: 3em;
-    color: var(--color-principal);
-    margin-bottom: 10px;
+    font-size: 3.5em; 
+    color: var(--color-primario-vibrante);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05); 
 }
 
 .subtitulo {
-    font-size: 1.2em;
-    color: #666;
+    font-size: 1.3em; 
+    color: var(--color-texto-oscuro);
     margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Estilos para la imagen de perfil */
+.profile-image-container {
+    width: 150px; 
+    height: 150px;
+    margin: 20px auto 0; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    border: 5px solid var(--color-primario-vibrante); /* Borde rosa vibrante */
+    box-shadow: 0 0 0 7px rgba(255, 20, 147, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2); /* Doble sombra para un efecto flotante */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-image-container:hover {
+    transform: scale(1.05) rotate(2deg); /* Pequeña animación al pasar el ratón */
+    border-color: var(--color-secundario-suave); /* Cambio de color de borde */
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
 }
 
 h2 {
     font-family: var(--fuente-titulo);
-    color: var(--color-secundario);
+    color: var(--color-secundario-suave); 
     margin-bottom: 25px;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* ---------------------------------------------------- */
@@ -72,18 +105,25 @@ h2 {
     width: 100%; 
     max-width: 550px; 
     padding: 30px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: white; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px var(--color-sombra-suave); 
     margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.seccion-caja:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+}
+
+
 #seccion-habilidades {
-    border: 2px solid var(--color-principal); /* Borde Rosa Brillante */
+    border: 3px solid var(--color-primario-vibrante); 
 }
 
 #seccion-ejercicios {
-    border: 2px solid var(--color-secundario); /* Borde Azul Acero */
+    border: 3px solid var(--color-secundario-suave); 
 }
 
 /* ---------------------------------------------------- */
@@ -96,23 +136,24 @@ h2 {
 }
 
 .habilidad-item {
-    background-color: var(--color-fondo); 
-    border: 1px solid var(--color-principal);
-    color: var(--color-texto);
-    padding: 10px 15px;
+    background-color: var(--color-fondo-claro); 
+    border: 1px solid var(--color-primario-vibrante);
+    color: var(--color-texto-oscuro);
+    padding: 12px 20px; 
     margin: 10px 0;
-    border-radius: 25px;
+    border-radius: 30px; 
     font-weight: 500;
     display: flex; 
     align-items: center;
-    gap: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    gap: 12px; 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .habilidad-item:hover {
-    transform: scale(1.02);
-    background-color: white;
+    transform: translateX(10px) scale(1.02); 
+    background-color: var(--color-acento-claro); 
+    border-color: var(--color-secundario-suave);
 }
 
 /* ---------------------------------------------------- */
@@ -125,38 +166,73 @@ h2 {
 }
 
 .lista-ejercicios li {
-    margin-bottom: 15px;
+    margin-bottom: 18px; 
 }
 
 .enlace-ejercicio {
     display: block;
-    padding: 10px 20px;
-    background-color: var(--color-principal);
+    padding: 12px 25px; 
+    background-color: var(--color-primario-vibrante);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px; 
     font-weight: 700;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 2px solid var(--color-principal);
+    letter-spacing: 0.5px; 
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; 
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.3); 
 }
 
 .enlace-ejercicio:hover {
-    background-color: white;
-    color: var(--color-principal);
-    border-color: var(--color-secundario); /* Cambia el borde en hover para contraste */
-    transform: translateX(5px);
+    background-color: var(--color-secundario-suave); 
+    color: white;
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 15px rgba(106, 90, 205, 0.4); 
 }
 
 /* ---------------------------------------------------- */
 /* Media Query para hacerlo Responsivo (en móviles) */
 /* ---------------------------------------------------- */
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .titulo-principal {
+        font-size: 2.5em;
+    }
+
+    .subtitulo {
+        font-size: 1.1em;
+    }
+
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+        border-width: 4px;
+        margin-top: 15px;
+    }
+
     .content-container {
-        flex-direction: column; /* Apila las secciones verticalmente en pantallas pequeñas */
+        flex-direction: column; 
         align-items: center;
+        gap: 20px;
     }
 
     .seccion-caja {
-        max-width: 90%; /* Ajusta el ancho para ocupar más espacio en el móvil */
+        max-width: 95%; 
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.7em;
+        margin-bottom: 20px;
+    }
+
+    .habilidad-item, .enlace-ejercicio {
+        padding: 10px 15px;
+        font-size: 0.95em;
     }
 }
