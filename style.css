@@ -60,17 +60,17 @@ h2 {
 .content-container {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Espacio entre las dos cajas */
-    max-width: 1200px; /* Ancho máximo para el contenedor */
+    gap: 30px; 
+    max-width: 1200px; 
     margin: 40px auto;
     padding: 0 20px;
-    flex-wrap: wrap; /* Permite que las cajas se apilen en pantallas pequeñas */
+    flex-wrap: wrap; 
 }
 
 /* Estilo común para ambas secciones (Habilidades y Ejercicios) */
 .seccion-caja {
-    width: 100%; /* Por defecto, ocupan todo el ancho */
-    max-width: 550px; /* Máximo ancho individual en desktop */
+    width: 100%; 
+    max-width: 550px; 
     padding: 30px;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -78,7 +78,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* Estilos específicos para cada sección */
 #seccion-habilidades {
     border: 2px solid var(--color-principal); /* Borde Rosa Brillante */
 }
@@ -117,7 +116,7 @@ h2 {
 }
 
 /* ---------------------------------------------------- */
-/* Estilos para Ejercicios (Manteniendo los estilos anteriores) */
+/* Estilos para Ejercicios */
 /* ---------------------------------------------------- */
 .lista-ejercicios {
     list-style: none;
@@ -144,5 +143,20 @@ h2 {
 .enlace-ejercicio:hover {
     background-color: white;
     color: var(--color-principal);
+    border-color: var(--color-secundario); /* Cambia el borde en hover para contraste */
     transform: translateX(5px);
+}
+
+/* ---------------------------------------------------- */
+/* Media Query para hacerlo Responsivo (en móviles) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Apila las secciones verticalmente en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .seccion-caja {
+        max-width: 90%; /* Ajusta el ancho para ocupar más espacio en el móvil */
+    }
 }
