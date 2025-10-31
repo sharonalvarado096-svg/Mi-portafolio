@@ -31,8 +31,8 @@ body {
 /* Estilos del encabezado/hero */
 .hero {
     padding: 60px 20px 40px; 
-    background: linear-gradient(135deg, white, var(--color-acento-claro)); /* Degradado sutil */
-    box-shadow: 0 8px 20px var(--color-sombra-suave); /* Sombra más pronunciada */
+    background: linear-gradient(135deg, white, var(--color-acento-claro)); 
+    box-shadow: 0 8px 20px var(--color-sombra-suave); 
     margin: 0 auto 50px auto; 
     max-width: 800px;
     border-radius: 15px; 
@@ -62,14 +62,14 @@ body {
     margin: 20px auto 0; 
     border-radius: 50%; 
     overflow: hidden; 
-    border: 5px solid var(--color-primario-vibrante); /* Borde rosa vibrante */
-    box-shadow: 0 0 0 7px rgba(255, 20, 147, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2); /* Doble sombra para un efecto flotante */
+    border: 5px solid var(--color-primario-vibrante); 
+    box-shadow: 0 0 0 7px rgba(255, 20, 147, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .profile-image-container:hover {
-    transform: scale(1.05) rotate(2deg); /* Pequeña animación al pasar el ratón */
-    border-color: var(--color-secundario-suave); /* Cambio de color de borde */
+    transform: scale(1.05) rotate(2deg); 
+    border-color: var(--color-secundario-suave); 
 }
 
 .profile-image {
@@ -170,4 +170,69 @@ h2 {
 }
 
 .enlace-ejercicio {
-    display:
+    display: block;
+    padding: 12px 25px; 
+    background-color: var(--color-primario-vibrante);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; 
+    font-weight: 700;
+    letter-spacing: 0.5px; 
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; 
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.3); 
+}
+
+.enlace-ejercicio:hover {
+    background-color: var(--color-secundario-suave); 
+    color: white;
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 15px rgba(106, 90, 205, 0.4); 
+}
+
+/* ---------------------------------------------------- */
+/* Media Query para hacerlo Responsivo (en móviles) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .titulo-principal {
+        font-size: 2.5em;
+    }
+
+    .subtitulo {
+        font-size: 1.1em;
+    }
+
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+        border-width: 4px;
+        margin-top: 15px;
+    }
+
+    .content-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+    }
+
+    .seccion-caja {
+        max-width: 95%; 
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.7em;
+        margin-bottom: 20px;
+    }
+
+    .habilidad-item, .enlace-ejercicio {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+}
