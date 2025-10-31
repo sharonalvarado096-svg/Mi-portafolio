@@ -24,6 +24,7 @@ body {
     line-height: 1.6;
     text-align: center;
     padding-top: 50px;
+    /* Mínima altura para empujar el footer al final si el contenido es corto */
     min-height: 100vh; 
     transition: background-color 0.5s ease;
 }
@@ -191,6 +192,79 @@ h2 {
 }
 
 /* ---------------------------------------------------- */
+/* Estilos para el Footer (Contactos) */
+/* ---------------------------------------------------- */
+.footer-contact {
+    background-color: var(--color-acento-claro); /* Fondo de color durazno claro */
+    color: var(--color-texto-oscuro);
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 5px solid var(--color-primario-vibrante); /* Borde superior rosa brillante */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1); /* Sombra superior sutil */
+}
+
+.footer-contact h3 {
+    font-family: var(--fuente-titulo);
+    color: var(--color-secundario-suave); /* Azul púrpura */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espacio entre los contactos */
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    font-size: 1.1em;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contact-item strong {
+    font-weight: 700;
+}
+
+.contact-item a {
+    color: var(--color-secundario-suave); /* Enlaces en color azul púrpura */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: var(--color-primario-vibrante); /* Se vuelven rosa al pasar el ratón */
+    text-decoration: underline;
+}
+
+.icon {
+    font-size: 1.2em;
+    color: var(--color-primario-vibrante);
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 20px;
+}
+
+
+/* ---------------------------------------------------- */
 /* Media Query para hacerlo Responsivo (en móviles) */
 /* ---------------------------------------------------- */
 @media (max-width: 768px) {
@@ -234,5 +308,10 @@ h2 {
     .habilidad-item, .enlace-ejercicio {
         padding: 10px 15px;
         font-size: 0.95em;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        gap: 15px;
     }
 }
