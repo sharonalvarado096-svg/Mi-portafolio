@@ -48,58 +48,81 @@ body {
     margin-bottom: 30px;
 }
 
-/* Estilos de los botones */
-.botones-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-}
-
-/* Se elimina el estilo de #btn-quien-soy */
-
-.btn-documento {
-    background-color: var(--color-principal);
-    color: white;
-}
-
-.btn-documento:hover {
-    background-color: #E65A9C; 
-    transform: translateY(-2px);
-}
-
-/* Estilos de la nueva sección de Ejercicios */
-#seccion-ejercicios {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid var(--color-secundario); /* Borde azul para destacar */
-}
-
 h2 {
     font-family: var(--fuente-titulo);
     color: var(--color-secundario);
     margin-bottom: 25px;
 }
 
+/* ---------------------------------------------------- */
+/* Contenedor principal para las dos cajas (Flexbox) */
+/* ---------------------------------------------------- */
+.content-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacio entre las dos cajas */
+    max-width: 1200px; /* Ancho máximo para el contenedor */
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Permite que las cajas se apilen en pantallas pequeñas */
+}
+
+/* Estilo común para ambas secciones (Habilidades y Ejercicios) */
+.seccion-caja {
+    width: 100%; /* Por defecto, ocupan todo el ancho */
+    max-width: 550px; /* Máximo ancho individual en desktop */
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Estilos específicos para cada sección */
+#seccion-habilidades {
+    border: 2px solid var(--color-principal); /* Borde Rosa Brillante */
+}
+
+#seccion-ejercicios {
+    border: 2px solid var(--color-secundario); /* Borde Azul Acero */
+}
+
+/* ---------------------------------------------------- */
+/* Estilos Creativos para Habilidades */
+/* ---------------------------------------------------- */
+.lista-habilidades {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.habilidad-item {
+    background-color: var(--color-fondo); 
+    border: 1px solid var(--color-principal);
+    color: var(--color-texto);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 25px;
+    font-weight: 500;
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.habilidad-item:hover {
+    transform: scale(1.02);
+    background-color: white;
+}
+
+/* ---------------------------------------------------- */
+/* Estilos para Ejercicios (Manteniendo los estilos anteriores) */
+/* ---------------------------------------------------- */
 .lista-ejercicios {
     list-style: none;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .lista-ejercicios li {
@@ -115,7 +138,7 @@ h2 {
     border-radius: 5px;
     font-weight: 700;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 2px solid var(--color-principal); /* Borde para el efecto hover */
+    border: 2px solid var(--color-principal);
 }
 
 .enlace-ejercicio:hover {
@@ -123,11 +146,3 @@ h2 {
     color: var(--color-principal);
     transform: translateX(5px);
 }
-
-.nota {
-    font-style: italic;
-    color: #999;
-    margin-top: 20px;
-}
-
-/* Se elimina todo el CSS relacionado con .habilidades-ocultas y .habilidades-mostradas, etc. */
